@@ -1,7 +1,7 @@
 public class PassByReference
 {
     
-    /* static void passByReference(int[] arr)
+    static void passByReference(int[] arr)
     {
         arr[1] = 10;
         for(int i = 0; i<arr.length;i++)
@@ -9,7 +9,7 @@ public class PassByReference
             System.out.println(arr[i]);
         }
     }
- */
+
 
     public static void makeItHalf(Data myData)
     {
@@ -23,14 +23,14 @@ public class PassByReference
     {
         
 
-       /*  int[] num = {1,2,3,4,5};
+        int[] num = {1,2,3,4,5};
 
         passByReference(num);
 
         for(int i = 0; i<num.length; i++)
         {
         System.out.println(num[i]);
-        } */
+        }
 
         Data newData = new Data();        //created a object for Data class 
         newData.number = 100; 
