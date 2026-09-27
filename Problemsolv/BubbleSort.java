@@ -8,7 +8,8 @@ public class BubbleSort
         while(flag == true)
         {
             flag = false;
-            for(int i = 0; i < n; i++){
+            for(int i = 0; i < n-1; i++){
+                
                 if(nums[i] > nums[i+1])
                 {
                     int temp = nums[i];
@@ -17,7 +18,7 @@ public class BubbleSort
                     flag = true;
                 }
             }
-            n--
+            
         }
         for(int i = 0; i < nums.length; i++)
         {
