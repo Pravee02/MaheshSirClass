@@ -7,7 +7,7 @@ public class BubbleSort
         int n = nums.length;
         while(flag == true)
         {
-            flag = false;
+            flag = false;   
             for(int i = 0; i < n-1; i++){
                 
                 if(nums[i] > nums[i+1])
