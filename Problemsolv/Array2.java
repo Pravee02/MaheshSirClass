@@ -60,18 +60,17 @@ public class Array2
                 if(right == left)
                 {
                       System.out.print(nums[left] );
-                      left--;
-                      right++;
+                     
                 }   
                 else{      
                 System.out.println();
                 System.out.print(nums[left] + " -> ");
                 System.out.print(nums[right]);
-                left--; 
-                right++;
+                
                 System.out.println();
                 }
-                
+                left--; 
+                right++;
             }
         }
         
@@ -84,23 +83,23 @@ public static void main(String[] args)
         
         int arr[] = { 1,2,3,4,5,6,7,8,9,10,11};
 
-        System.out.println("printing left to right");
-        printLeftToRight(arr); // calling method left to right
+        // System.out.println("printing left to right");
+        // printLeftToRight(arr); // calling method left to right
 
-        System.out.println();
-        System.out.println();
+        // System.out.println();
+        // System.out.println();
 
-        System.out.println("printing rigt to left");
-        printRightToLeft(arr); // callinf method right to left
+        // System.out.println("printing rigt to left");
+        // printRightToLeft(arr); // callinf method right to left
 
-        System.out.println();
-        System.out.println();
+        // System.out.println();
+        // System.out.println();
 
-        System.out.println("printing two pointers");
-        printFromBothSides(arr);
+        // System.out.println("printing two pointers");
+        // printFromBothSides(arr);
 
-        System.out.println();
-        System.out.println();
+        // System.out.println();
+        // System.out.println();
 
         System.out.println("printing two pointers from middle");
         printFromMiddeltoBotheSide(arr);
