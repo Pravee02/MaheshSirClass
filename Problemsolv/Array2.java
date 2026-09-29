@@ -68,9 +68,11 @@ public class Array2
                 System.out.print(nums[right]);
                 
                 System.out.println();
+             
                 }
                 left--; 
                 right++;
+                
             }
         }
         
