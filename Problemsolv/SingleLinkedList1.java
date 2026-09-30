@@ -31,6 +31,7 @@
 //         endNewNode.data = data;
 //         endNewNode.next = null;
 
+        
 //         Node temp = head;
 //         while(temp.next != null )
 //         {
@@ -91,7 +92,7 @@
 //         thirdnode.data = 103;
 //         thirdnode.next = null;
         
-//        System.out.println("predefined linked list");
+//         System.out.println("predefined linked list");
 //         printList(head);
         
 //         System.out.println();
@@ -129,31 +130,75 @@ public class SingleLinkedList1
     
     Node head = null;
 
-    //function invocation
+
     printList(head);
-    System.out.println();
+        System.out.println();
+
     
-    head = insertAtStart(100,head);
-    printList(head);
+         head = insertAtStart(100,head);
+         printList(head);
 
-    System.out.println();
-    head = insertAtStart(100,head);
-    head = insertAtStart(101,head);
-    head = insertAtStart(102,head);
-    printList(head);
+         System.out.println();
+         head = insertAtStart(100,head);
+         head = insertAtStart(101,head);
+         head = insertAtStart(102,head);
+         printList(head);
 
-    System.out.println();
-    inserAtEnd(1000 , head);
-    printList(head);
-
-
-    System.out.println();
-    inserAtMiddle(3,head);
-    printList(head);
+        System.out.println();
+        inserAtMiddle(3,head,100);
+        printList(head);
 
 
+    
+        // testInsertAtEnd();
+        // testInsertAMiddle();
+    
+
+
+    
+
+
+    
+    
  }   
 
+   
+    // static void testInsertATStart()
+    // {
+    //     Node head = null;
+    
+    //     printList(head);
+    //     System.out.println();
+
+    
+    //     head = insertAtStart(100,head);
+    //     printList(head);
+
+    //     System.out.println();
+    //     head = insertAtStart(100,head);
+    //     head = insertAtStart(101,head);
+    //     head = insertAtStart(102,head);
+    //     printList(head);
+
+    // } 
+
+    static void testInsertAtEnd()
+    {
+        Node head = null;
+
+        System.out.println();
+        head = inserAtEnd(1000 , head);
+        printList(head);
+    }
+
+    // static void testInsertAMiddle()
+    // {
+    //     Node head = null;
+
+    //     System.out.println();
+    //     inserAtMiddle(3,head,100);
+    //     printList(head);
+    // }
 
     // function defination
     static Node insertAtStart(int value , Node currentHead)
@@ -171,6 +216,61 @@ public class SingleLinkedList1
 
     }
 
+   
+    static Node inserAtEnd(int value,Node head)
+    {
+        Node lastNode = new Node();
+        lastNode.data = value;
+        lastNode.next = null;
+
+        if(head == null)
+        {
+            return lastNode;
+        }
+        else
+        {
+            Node temp = head;
+            while(temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = lastNode;
+        }
+        return head;
+
+    }
+
+
+    static void  inserAtMiddle(int data , Node head , int key)
+    {
+        Node newMiddleNode = new Node();
+        newMiddleNode.data = data;
+        newMiddleNode.next = null;
+
+        Node temp = head;
+
+        if(temp == null)
+        {
+            return ;
+        }
+        else if(temp.data == key)
+        {
+            temp.next = newMiddleNode;
+        }
+        else
+        {
+            while(temp != null && temp.data != key)
+            {
+                temp = temp.next;
+            }
+          
+        newMiddleNode.next = temp.next;
+        temp.next = newMiddleNode;
+        }
+        
+    }
+
+
     static void printList(Node head)
     {
         Node monkey = head;
@@ -183,40 +283,6 @@ public class SingleLinkedList1
         }
         System.out.print("null");
     }
-
-    static void inserAtEnd(int data,Node head)
-    {
-        Node lastNode = new Node();
-        lastNode.data = data;
-        lastNode.next = null;
-
-        Node temp = head;
-        while(temp.next != null)
-        {
-            temp = temp.next;
-        }
-         temp.next = lastNode;
-
-    }
-
-
-    static void inserAtMiddle(int data , Node head)
-    {
-        Node newMiddleNode = new Node();
-        newMiddleNode.data = data;
-        newMiddleNode.next = null;
-
-        Node temp = head;
-        while(temp.data != 100)
-        {
-            temp = temp.next;
-        }
-        
-        newMiddleNode.next = temp.next;
-        temp.next = newMiddleNode;
-        
-    }
-
 
 
 }
