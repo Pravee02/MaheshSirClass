@@ -131,34 +131,42 @@ public class SingleLinkedList1
     Node head = null;
 
 
-    printList(head);
+        printList(head);
         System.out.println();
 
-    
-         head = insertAtStart(100,head);
-         printList(head);
+    //  insert at start calling
 
-         System.out.println();
-         head = insertAtStart(100,head);
-         head = insertAtStart(101,head);
-         head = insertAtStart(102,head);
-         printList(head);
+        head = insertAtStart(100,head);
+        printList(head);
+
+        System.out.println();
+        head = insertAtStart(100,head);
+        head = insertAtStart(101,head);
+        head = insertAtStart(102,head);
+        printList(head);
+
+
+    //  insert at end calling
+    
+        System.out.println();
+        head = inserAtEnd(1000 , head);
+        printList(head);
+
+    //  insert at middle calling
 
         System.out.println();
         inserAtMiddle(3,head,100);
         printList(head);
 
+        //  insert at middle but previous key calling
 
-    
+        System.out.println();
+        insertBeforeKey(2000 , 3 , head);
+        printList(head);
         // testInsertAtEnd();
         // testInsertAMiddle();
     
 
-
-    
-
-
-    
     
  }   
 
@@ -182,14 +190,14 @@ public class SingleLinkedList1
 
     // } 
 
-    static void testInsertAtEnd()
-    {
-        Node head = null;
+    // static void testInsertAtEnd()
+    // {
+    //     Node head = null;
 
-        System.out.println();
-        head = inserAtEnd(1000 , head);
-        printList(head);
-    }
+    //     System.out.println();
+    //     head = inserAtEnd(1000 , head);
+    //     printList(head);
+    // }
 
     // static void testInsertAMiddle()
     // {
@@ -201,6 +209,7 @@ public class SingleLinkedList1
     // }
 
     // function defination
+    
     static Node insertAtStart(int value , Node currentHead)
     {
         Node newNode = new Node(); // creation of a new node and set the  values
@@ -282,6 +291,28 @@ public class SingleLinkedList1
             monkey = monkey.next;
         }
         System.out.print("null");
+    }
+
+    static void insertBeforeKey(int data , int key , Node head)
+    {
+
+        Node newMiddlepreNode = new Node();
+        newMiddlepreNode.data = data;
+        newMiddlepreNode.next = null;
+        if(head == null)
+        {
+            return ;
+        }
+        else{
+            Node temp = head;
+            while(temp.next.data != key)
+            {
+                temp = temp.next;
+            }
+            newMiddlepreNode.next = temp.next;
+            temp.next = newMiddlepreNode;
+        }
+
     }
 
 
