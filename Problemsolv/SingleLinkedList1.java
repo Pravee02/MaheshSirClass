@@ -158,16 +158,27 @@ public class SingleLinkedList1
         inserAtMiddle(3,head,100);
         printList(head);
 
-        //  insert at middle but previous key calling
+         // insert at middle but previous key calling
 
         System.out.println();
         insertBeforeKey(2000 , 3 , head);
         printList(head);
-        // testInsertAtEnd();
-        // testInsertAMiddle();
-    
 
-    
+       // delete at start
+
+        System.out.println();
+        head = deleteAtStart(head);
+        printList(head);
+
+        // delete at end
+        System.out.println();
+        head = deleteAtEnd(head);
+        printList(head);
+
+        //delete at middle
+        System.out.println();
+        head = deletAtMiddle(head , 3);
+        printList(head);
  }   
 
    
@@ -210,6 +221,7 @@ public class SingleLinkedList1
 
     // function defination
     
+    // insert at start
     static Node insertAtStart(int value , Node currentHead)
     {
         Node newNode = new Node(); // creation of a new node and set the  values
@@ -226,6 +238,7 @@ public class SingleLinkedList1
     }
 
    
+    // insert at end
     static Node inserAtEnd(int value,Node head)
     {
         Node lastNode = new Node();
@@ -249,7 +262,7 @@ public class SingleLinkedList1
 
     }
 
-
+    // insert at middel
     static void  inserAtMiddle(int data , Node head , int key)
     {
         Node newMiddleNode = new Node();
@@ -280,6 +293,7 @@ public class SingleLinkedList1
     }
 
 
+    // printing list
     static void printList(Node head)
     {
         Node monkey = head;
@@ -293,6 +307,7 @@ public class SingleLinkedList1
         System.out.print("null");
     }
 
+    // insert before key
     static void insertBeforeKey(int data , int key , Node head)
     {
 
@@ -313,6 +328,55 @@ public class SingleLinkedList1
             temp.next = newMiddlepreNode;
         }
 
+    }
+    // delete at start
+    static  Node deleteAtStart(Node head)
+    {
+        if(head == null)
+        {
+            return null;
+        }
+        else
+        {
+            return head.next;
+        }
+    }
+
+    // delete at end
+    static  Node deleteAtEnd(Node head)
+    {
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        else
+        {
+            Node lastButOne = head;
+            while(lastButOne.next.next != null)
+            {
+                lastButOne = lastButOne.next;
+            }
+             lastButOne.next = null;
+        }
+        return head;
+    }
+
+    static Node deletAtMiddle(Node head , int data)
+    {
+        if(head == null)
+        {
+            return null;
+        }
+        else
+        {
+            Node lastButOne = head;
+            while(lastButOne.next.data != data)
+            {
+                lastButOne = lastButOne.next;
+            }
+            lastButOne.next = lastButOne.next.next;
+        }
+        return head;
     }
 
 
