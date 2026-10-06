@@ -135,50 +135,48 @@ public class SingleLinkedList1
         System.out.println();
 
     //  insert at start calling
-
         head = insertAtStart(100,head);
         printList(head);
 
         System.out.println();
-        head = insertAtStart(100,head);
         head = insertAtStart(101,head);
         head = insertAtStart(102,head);
+        head = insertAtStart(103,head);
+        head = insertAtStart(101,head);
         printList(head);
 
 
     //  insert at end calling
-    
         System.out.println();
-        head = inserAtEnd(1000 , head);
-        printList(head);
+        //head = inserAtEnd(1000 , head);
+       // printList(head);
 
     //  insert at middle calling
-
         System.out.println();
-        inserAtMiddle(3,head,100);
+       // inserAtMiddle(3,head,100);
+       // printList(head);
+
+    // insert at middle but previous key calling
+        System.out.println();
+        //insertBeforeKey(2000 , 3 , head);
+       // printList(head);
+
+    // delete at start
+        System.out.println();
+        //head = deleteAtStart(head);
+       // printList(head);
+
+    // delete at end
+        System.out.println();
+       // head = deleteAtEnd(head);
+       // printList(head);
+
+    //delete at middle
+        System.out.println();
+        head = deletAtMiddle(head ,101);
         printList(head);
 
-         // insert at middle but previous key calling
 
-        System.out.println();
-        insertBeforeKey(2000 , 3 , head);
-        printList(head);
-
-       // delete at start
-
-        System.out.println();
-        head = deleteAtStart(head);
-        printList(head);
-
-        // delete at end
-        System.out.println();
-        head = deleteAtEnd(head);
-        printList(head);
-
-        //delete at middle
-        System.out.println();
-        head = deletAtMiddle(head , 3);
-        printList(head);
  }   
 
    
@@ -220,8 +218,11 @@ public class SingleLinkedList1
     // }
 
     // function defination
-    
-    // insert at start
+
+
+
+
+    // insert at start method
     static Node insertAtStart(int value , Node currentHead)
     {
         Node newNode = new Node(); // creation of a new node and set the  values
@@ -238,7 +239,7 @@ public class SingleLinkedList1
     }
 
    
-    // insert at end
+    // insert at end method
     static Node inserAtEnd(int value,Node head)
     {
         Node lastNode = new Node();
@@ -262,7 +263,7 @@ public class SingleLinkedList1
 
     }
 
-    // insert at middel
+    // insert at middel method
     static void  inserAtMiddle(int data , Node head , int key)
     {
         Node newMiddleNode = new Node();
@@ -293,7 +294,7 @@ public class SingleLinkedList1
     }
 
 
-    // printing list
+    // printing list method
     static void printList(Node head)
     {
         Node monkey = head;
@@ -307,7 +308,7 @@ public class SingleLinkedList1
         System.out.print("null");
     }
 
-    // insert before key
+    // insert before key method
     static void insertBeforeKey(int data , int key , Node head)
     {
 
@@ -329,7 +330,7 @@ public class SingleLinkedList1
         }
 
     }
-    // delete at start
+    // delete at start method
     static  Node deleteAtStart(Node head)
     {
         if(head == null)
@@ -342,7 +343,7 @@ public class SingleLinkedList1
         }
     }
 
-    // delete at end
+    // delete at end method
     static  Node deleteAtEnd(Node head)
     {
         if(head == null || head.next == null)
@@ -361,23 +362,74 @@ public class SingleLinkedList1
         return head;
     }
 
-    static Node deletAtMiddle(Node head , int data)
+    // delete at middle method
+    static Node deletAtMiddle(Node head , int key)
     {
-        if(head == null)
+        if(head == null)                //  1. if head is null
         {
             return null;
         }
-        else
+
+        else if(head.data ==key )       // 2.  if single node key is present 
         {
-            Node lastButOne = head;
-            while(lastButOne.next.data != data)
+            head = head.next;
+        }
+
+        else if(head.data != key && head.next == null)   // 3. single node key is not present 
+        {
+            return head;
+        }
+
+        else if( head.next.data == key)      // 4. two node key is present 
+        {
+            head.next = head.next.next;
+        }
+        
+               // 5. there are more node key is present and not present
+        
+            Node lastButOne = head;     // single pointer 
+
+            // while(lastButOne.next != null && lastButOne.next.data != key  )  
+            // {
+            //     lastButOne = lastButOne.next;
+            // }
+            // if(lastButOne.next != null)  // 6. key node  present 
+            // {
+            //    lastButOne.next = lastButOne.next.next;
+            // }
+
+            while(lastButOne.next != null)  
             {
                 lastButOne = lastButOne.next;
+            
+            if(lastButOne.next != null && lastButOne.next.data == key)  // 6. key node  present 
+            {
+               lastButOne.next = lastButOne.next.next;
             }
-            lastButOne.next = lastButOne.next.next;
+        
+            
         }
-        return head;
+        return head;     // 7. key node not present
     }
 
 
 }
+
+
+
+
+// else       // 5. there are more node key is present and not present
+//         {
+//             Node lastButOne = head;     // single pointer 
+
+//             while(lastButOne.next != null)  
+//             {
+//                 lastButOne = lastButOne.next;
+            
+//             if(lastButOne.next != null&& lastButOne.next.data == key)  // 6. key node  present 
+//             {
+//                lastButOne.next = lastButOne.next.next;
+//             }
+//         }
+            
+//         }
