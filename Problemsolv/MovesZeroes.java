@@ -26,14 +26,13 @@ public class MovesZeroes
                 {
                     i++;
                     j++;
-                
             }
         }
     }
     public static void main(String[] args)
     {
 
-        int arr[] = {0,0,0,5,0,9,0 ,1, 0};
+        int arr[] = {5,0,0,0,5,0,9,0 ,1, 0};
 
         movesZeroes(arr);
 
