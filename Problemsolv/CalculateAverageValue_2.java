@@ -1,4 +1,4 @@
-public class CalculateAverageValue
+public class CalculateAverageValue_2
 {
     static double CalcAverageValue(int[] nums)
     {
@@ -17,7 +17,7 @@ public class CalculateAverageValue
     }
     public static void main(String[] args)
     {
-        int[] arr = {1,3,5,2};     // 30 / 6 = 5
+        int[] arr = {70,85,90,55};     // 30 / 6 = 5
         double result = CalcAverageValue(arr);
         System.out.println("the average value is " + result);
     }

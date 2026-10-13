@@ -19,8 +19,11 @@ public class LinearSearch
     {
 
         int[] arr = {5,1,8,9,10};
+      
         boolean result = isKeyPresent(arr, 10);
         System.out.println(result);
+
+       
         
     }
 }
