@@ -14,7 +14,7 @@ public class CountSignChanges_18
     }
     public static void main(String[] args)
     {
-        int[] arr = {3, -2, -5, 4, 6, -1};
+        int[] arr = {3,5,8,4,6};
         System.out.println(countSignChnages( arr));
 
     }

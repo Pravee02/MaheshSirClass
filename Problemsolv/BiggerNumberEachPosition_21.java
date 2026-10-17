@@ -1,0 +1,41 @@
+public class BiggerNumberEachPosition_21
+{
+    static int[] biggerNumberPosition(int[] arr1 , int[] arr2)
+    {
+        if(arr1 == null)
+        {
+            return null;
+        }
+
+        int[] newArray = new int[arr1.length];
+        if(arr1.length == arr2.length)
+        {
+            for(int i = 0; i < arr1.length; i++)
+            {
+                if(arr1[i] > arr2[i])
+                {
+                    newArray[i] = arr1[i];
+                }
+                else
+                {
+                    newArray[i] = arr2[i];
+                }
+            }
+        }
+        return newArray;
+        
+    }
+    public static void main(String[] args)
+    {
+    
+        int[] arr1 = {4,9,8,7};
+        int[] arr2 = {6,3,8,7};
+        int[] result = biggerNumberPosition(arr1 , arr2);
+
+        for(int i : result)
+        {
+            System.out.print(i + " ");
+        }
+        
+    }
+}
