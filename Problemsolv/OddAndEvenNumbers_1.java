@@ -3,6 +3,10 @@ public class OddAndEvenNumbers_1
 
     static int[] oddEvenCount(int[] arr)
     {
+        if(arr == null)
+        {
+            return  new int[] {-1,-1};
+        }
         int evenCount = 0;
         int oddCount = 0;
         for(int i = 0; i < arr.length ; i++)
