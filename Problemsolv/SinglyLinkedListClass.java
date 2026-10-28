@@ -61,9 +61,9 @@ public class SinglyLinkedListClass
         obj.next.next.next = obj2;
         obj2.next = null;
         
-        //obj2.next = new Node();
-        // obj2.next.data = 50;
-        // obj2.next.next = null; 
+        obj2.next = new Node();
+        obj2.next.data = 50;
+        obj2.next.next = null; 
         
         printElements(head);
 
