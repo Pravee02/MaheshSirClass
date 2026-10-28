@@ -42,7 +42,7 @@ public class SinglyLinkedList {
         // Create a new node and assigned the values
         Node firstNode = new Node();
         firstNode.data = 101;
-        firstNode.next = null;
+         
 
         // created a second node
         Node secondNode = new Node();
