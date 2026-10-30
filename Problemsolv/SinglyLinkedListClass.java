@@ -42,20 +42,18 @@ public class SinglyLinkedListClass
 
     }
 
-    static void getMiddleELement(Node head)
+    static int getMiddleELement(Node head)
     {
         System.out.println();
+        // list is empty
         if(head == null)
         {
-            System.out.println("node is empty");
-            return;
+            return 0 ;
         }
-        
+        // list contains only 2 nodes
         if(head.next.next == null)
-        {
-
-            System.out.println(head.data); 
-            return;
+        { 
+            return head.data;
         }
         Node slow = head;
         Node fast = head; 
@@ -64,7 +62,7 @@ public class SinglyLinkedListClass
             fast = fast.next.next;
             slow = slow.next;
         }
-        System.out.println(slow.data);
+        return slow.data;
     }
 
     static Node getFifthEvenNumber(Node head)
@@ -77,7 +75,7 @@ public class SinglyLinkedListClass
         int count = 1;
         while(currentHead != null)
         {
-            if(count == 5)
+            if(count == 5)                                              
             {
                 return currentHead;
             }
